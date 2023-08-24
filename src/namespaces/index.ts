@@ -42,6 +42,122 @@ declare namespace EmdLogger {
     };
   }
 
+  interface AppOpts extends Opts {
+    stringify: {
+      bigint: boolean;
+      deterministic: boolean;
+      indentationSpacing: number;
+      maximumBreadth: number;
+      maximumDepth: number;
+    };
+    logger: {
+      [key: string]: LoggingLevelOpts;
+    };
+    rest: {
+      exception: {
+        [key: string]: {
+          name: string;
+          showHeaders: boolean;
+        };
+      };
+    };
+  }
+
+  interface HttpOpts extends Opts {
+    method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+    headers: {
+      standard: {
+        post: {
+          applicationJson: {
+            'Content-Type': 'application/json';
+            'Access-Control-Allow-Headers': '*';
+            'Access-Control-Allow-Origin': '*';
+            'Access-Control-Allow-Methods': 'POST';
+          };
+          applicationXml: {
+            'Content-Type': 'application/xml';
+            'Access-Control-Allow-Headers': '*';
+            'Access-Control-Allow-Origin': '*';
+            'Access-Control-Allow-Methods': 'POST';
+          };
+        };
+      };
+    };
+    opcodes: {
+      [key: string]: string;
+    };
+    statuses: {
+      200: {
+        code: 200;
+        text: 'Ok';
+      };
+      300: {
+        code: 300;
+        text: 'Multiple Choices';
+      };
+      301: {
+        code: 301;
+        text: 'Moved Permanently';
+      };
+      302: {
+        code: 302;
+        text: 'Found';
+      };
+      304: {
+        code: 304;
+        text: 'Not Modified';
+      };
+      307: {
+        code: 307;
+        text: 'Temporary Redirect';
+      };
+      308: {
+        code: 308;
+        text: 'Permanent Redirect';
+      };
+      400: {
+        code: 400;
+        text: 'Bad Request';
+      };
+      401: {
+        code: 401;
+        text: 'Unauthorized';
+      };
+      408: {
+        code: 408;
+        text: 'Request Timeout';
+      };
+      415: {
+        code: 415;
+        text: 'Unsupported Media Type';
+      };
+      500: {
+        code: 500;
+        text: 'Internal Server Error';
+      };
+      501: {
+        code: 501;
+        text: 'Not Implemented';
+      };
+      502: {
+        code: 502;
+        text: 'Bad Gateway';
+      };
+      503: {
+        code: 503;
+        text: 'Service Unavailable';
+      };
+      504: {
+        code: 504;
+        text: 'Gateway Timeout';
+      };
+      55: {
+        code: 505;
+        text: 'HTTP Version Not Supported';
+      };
+    };
+  }
+
   interface LoggingLevelOpts extends Opts {
     level: 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'fatal';
   }
