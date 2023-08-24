@@ -24,7 +24,7 @@
     "build:redo": "npm run clean:artifacts && npm ci && npm run build",
     "format": "prettier -w .",
     "format:debug": "prettier --write --log-level debug .",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx .",
     "major": "npm run build && npm version major",
     "minor": "npm run build && npm version minor",
     "patch": "npm run build && npm version patch",
