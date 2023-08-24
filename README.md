@@ -40,6 +40,9 @@ npm run start
 
 ```sh
 npm run test
+
+### ex: npx jest -i tests/utils/index.test.ts -t stringify.util
+npx jest -i $TESTFILE -t $TESTSUITE
 ```
 
 ## Author
