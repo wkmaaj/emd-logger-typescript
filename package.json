@@ -1,6 +1,6 @@
 {
   "name": "emd-logger-typescript",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Embracing Microservices Design - Typescript logger module",
   "type": "module",
   "main": "src/index.ts",
