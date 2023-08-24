@@ -1,68 +1,19 @@
-import stringify from 'safe-stable-stringify';
 import sanitizeUtil from '../../src/utils/sanitize.util';
+import data from '../data';
+import log from '../log';
 
-const log = (obj: unknown, log = false) => {
-  const str = stringify(obj, null, 2);
-  log && console.log(str);
-  return str;
-};
+describe('sanitize.util', () => {
+  const { audit } = data;
 
-const testdata = {
-  audit: {
-    event: {
-      positive: {
-        withError: {
-          err: {
-            config: {
-              url: 'localhost',
-              method: 'POST',
-              headers: {
-                key: 'value'
-              }
-            },
-            e: {
-              name: 'exceptionName',
-              message: 'exceptionMessage'
-            }
-          },
-          data: {
-            someKey: 'someValue',
-            someObj: {
-              someKey1: 'someValue1',
-              someKey2: 'someValue2'
-            }
-          }
-        },
-        withoutError: {
-          data: {
-            someKey: 'someValue',
-            someObj: {
-              someKey1: 'someValue1',
-              someKey2: 'someValue2'
-            }
-          }
-        }
-      }
-    }
-  },
-  expected: {
-    tests: {
-      1: '{\n  "data": {\n    "someKey": "someValue",\n    "someObj": {\n      "someKey1": "someValue1",\n      "someKey2": "someValue2"\n    }\n  },\n  "err": {\n    "config": {\n      "additional": {\n        "headers": {\n          "key": "value"\n        }\n      },\n      "method": "POST",\n      "url": "localhost"\n    },\n    "message": "exceptionMessage",\n    "name": "exceptionName"\n  }\n}',
-      2: '{\n  "data": {\n    "someKey": "someValue",\n    "someObj": {\n      "someKey1": "someValue1",\n      "someKey2": "someValue2"\n    }\n  }\n}'
-    }
-  }
-};
-
-describe('sanitize.util unit tests', () => {
-  test('Unit Test 1 | Positive withError', () => {
-    expect(
-      log(sanitizeUtil(testdata.audit.event.positive.withError), true)
-    ).toStrictEqual(testdata.expected.tests[1]);
+  test('UT001 | Positive withError', () => {
+    expect(log(sanitizeUtil(audit.event.positive.withError))).toStrictEqual(
+      audit.expected.tests[1]
+    );
   });
 
-  test('Unit Test 2 | Positive withoutError', () => {
-    expect(
-      log(sanitizeUtil(testdata.audit.event.positive.withoutError), true)
-    ).toStrictEqual(testdata.expected.tests[2]);
+  test('UT002 | Positive withoutError', () => {
+    expect(log(sanitizeUtil(audit.event.positive.withoutError))).toStrictEqual(
+      audit.expected.tests[2]
+    );
   });
 });

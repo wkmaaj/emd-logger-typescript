@@ -3,7 +3,7 @@ import data from '../data';
 import log from '../log';
 
 describe('compose.util', () => {
-  test('compose.util   | positive | default export, asString parameter is true', () => {
+  test('UT001 | compose.util   | positive | default export, asString parameter is true', () => {
     expect(
       log(compose(data.compose.unsanitizedObj, data.compose.msg, true, 2, 2))
     ).toStrictEqual(
@@ -11,7 +11,7 @@ describe('compose.util', () => {
     );
   });
 
-  test('compose.util   | positive | default export, asString parameter is false', () => {
+  test('UT002 | compose.util   | positive | default export, asString parameter is false', () => {
     const res = compose(
       data.compose.unsanitizedObj,
       data.compose.msg,
@@ -26,19 +26,31 @@ describe('compose.util', () => {
 });
 
 describe('stringify.util', () => {
+  const defaultConfig = {
+    bigint: true,
+    maximumDepth: 10,
+    maximumBreadth: 4,
+    deterministic: true
+  };
+  const defaultIndentationSpacing = 2;
+
   test('stringify.util | positive | optional bigint parameter is default', () => {
-    expect(log(stringify(data.stringify.obj))).toBe(
-      data.stringify.expectedBigintTrue
-    );
+    expect(
+      log(
+        stringify(data.stringify.obj, defaultConfig, defaultIndentationSpacing)
+      )
+    ).toBe(data.stringify.expectedBigintTrue);
   });
 
-  test('stringify.util | positive | optional bigint parameter is true', () => {
-    expect(log(stringify(data.stringify.obj))).toBe(
-      data.stringify.expectedBigintTrue
-    );
+  test('UT003 | stringify.util | positive | optional bigint parameter is true', () => {
+    expect(
+      log(
+        stringify(data.stringify.obj, defaultConfig, defaultIndentationSpacing)
+      )
+    ).toBe(data.stringify.expectedBigintTrue);
   });
 
-  test('stringify.util | positive | optional bigint parameter is false', () => {
+  test('UT004 | stringify.util | positive | optional bigint parameter is false', () => {
     expect(
       stringify(data.stringify.obj, {
         bigint: false,
@@ -49,7 +61,7 @@ describe('stringify.util', () => {
     ).toBe(data.stringify.expectedBigintFalse);
   });
 
-  test('stringify.util | positive | optional bigint parameter is true, maximumDepoth is 10, maximumBreadth is 2', () => {
+  test('UT005 | stringify.util | positive | optional bigint parameter is true, maximumDepoth is 10, maximumBreadth is 2', () => {
     expect(
       stringify(data.stringify.obj, {
         bigint: true,
@@ -60,7 +72,7 @@ describe('stringify.util', () => {
     ).toBe(data.stringify.expectedBigintTrueCustomMaximumDepth);
   });
 
-  test('stringify.util | positive | optional bigint parameter is false, maximumDepoth is 4, maximumBreadth is 12, deterministic is true', () => {
+  test('UT006 | stringify.util | positive | optional bigint parameter is false, maximumDepoth is 4, maximumBreadth is 12, deterministic is true', () => {
     expect(
       stringify(data.stringify.obj, {
         bigint: false,
