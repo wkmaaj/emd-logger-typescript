@@ -9,8 +9,8 @@
   <a href="https://github.com/wkmaaj/emd-logger-typescript/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/wkmaaj/emd-logger-typescript/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/wkmaaj/emd-logger-typescript" />
+  <a href="https://github.com/wkmaaj/emd-logger-typescript/blob/release/1.0.0/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow" />
   </a>
   <a href="https://twitter.com/wkmaaj" target="_blank">
     <img alt="Twitter: wkmaaj" src="https://img.shields.io/twitter/follow/wkmaaj.svg?style=social" />
