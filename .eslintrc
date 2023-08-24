@@ -1,0 +1,58 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "airbnb-typescript/base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module",
+    "project": "./tsconfig.eslint.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "function-paren-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "import/extensions": ["error", { "ignorePackages": true }],
+    "import/order": ["off"],
+    "max-classes-per-file": [
+      "error",
+      {
+        "ignoreExpressions": true,
+        "max": 3
+      }
+    ],
+    "no-confusing-arrow": 0,
+    "no-plusplus": 0,
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": { "multiline": true },
+        "ExportDeclaration": { "multiline": true }
+      }
+    ],
+    "operator-linebreak": 0,
+    "quotes": 0,
+    "@typescript-eslint/comma-dangle": [2, "never"],
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/quotes": [2, "single"],
+    // Temporarily disabled
+    "@typescript-eslint/triple-slash-reference": 0,
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "import/prefer-default-export": 0,
+    "class-methods-use-this": 0,
+    "guard-for-in": 0,
+    "no-console": 0,
+    "@typescript-eslint/no-unused-expressions": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "no-restricted-syntax": 0
+  }
+}

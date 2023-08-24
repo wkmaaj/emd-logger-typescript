@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+cd ./emd-logger-typescript
+npx eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx .

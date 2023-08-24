@@ -1,0 +1,12 @@
+Dockerfile
+.dockerignore
+
+.git
+.gitattributes
+.gitignore
+
+.husky
+node_modules
+*.log
+
+README.md
