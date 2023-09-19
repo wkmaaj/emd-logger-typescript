@@ -25,6 +25,7 @@
     "build:clean": "npm run clean:complete && npm i && npm run build",
     "build:fresh": "npm run clean:dependencies && npm ci && npm run build",
     "build:redo": "npm run clean:artifacts && npm ci && npm run build",
+    "build:refresh": "npm run clean:refresh && npm i && npm run build",
     "format": "prettier -w .",
     "format:debug": "prettier --write --log-level debug .",
     "lint": "eslint -c .eslintrc --ext .js,.jsx,.ts,.tsx .",
