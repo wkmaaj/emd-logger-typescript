@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "amazonwebservices.aws-toolkit-vscode",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "GitHub.github-vscode-theme",
+    "mechatroner.rainbow-csv",
+    "monokai.theme-monokai-pro-vscode",
+    "mwpb.java-prettier-formatter",
+    "redhat.vscode-xml",
+    "redhat.vscode-yaml",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "VisualStudioExptTeam.intellicode-api-usage-examples",
+    "vmware.vscode-boot-dev-pack",
+    "vscjava.vscode-gradle",
+    "vscjava.vscode-java-pack",
+    "waderyan.gitblame"
+  ]
+}

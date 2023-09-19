@@ -1,0 +1,80 @@
+{
+  // @see: https://github.com/Microsoft/vscode-recipes/tree/master/Next-js
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "debug",
+      "url": "http://localhost:3000/irbiz",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
+      "name": "[LOCAL] Full Stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run local",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s/irportal/tfa1099",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "[DEV] Full Stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s/irportal/tfa1099",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "name": "[SIT] Full Stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run sit",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s/irportal/tfa1099",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest: current file",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "--config",
+        "jest.config.js"
+      ],
+      "console": "integratedTerminal",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${worksspaceFolder}/node_modules/jest/bin/jest"
+      }
+    },
+    {
+      "name": "Charles Proxy (LOCAL SADI)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run local:sadi",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: https?://[^:]+(:[0-9]+)",
+        "uriFormat": "http://localhost.charlesproxy.com%s/irportal/tfa1099?",
+        "action": "debugWithChrome"
+      }
+    }
+  ]
+}
