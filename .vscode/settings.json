@@ -5,5 +5,9 @@
       "source.organizeImports": true
     }
   },
+  "workbench.colorCustomizations": {
+    // "activityBar.background": "#00AA00",
+    // "icon.foreground": "#ff0000"
+  },
   "workbench.colorTheme": "Default Dark Modern"
 }
