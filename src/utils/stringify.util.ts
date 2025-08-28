@@ -3,9 +3,9 @@ import { configure } from 'safe-stable-stringify';
 
 /**
  * @author wkmaaj
- * @param maximumDepth the number of object nesting levels that will be serialized.
- * @param bigint flag indicating whether or not bigint values are converted to numbers,
- * default is true, if set to false then the bigint values are ignored when serializing an object.
+ * @param obj an object to be stringified.
+ * @param config an object specifying configuration options for stringification.
+ * @param indentationSpacing the number of white space characters to use when indenting.
  * @returns
  */
 export default (

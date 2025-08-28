@@ -1,10 +1,25 @@
+/* eslint-disable max-len, no-trailing-spaces */
+/**
+ * An interface specifying the configuration options available for stringification of a JSON object.
+ *
+ * @author wkmaaj
+ * @param bigint a boolean flag indicating whether or not bigint values are converted to numbers, default is true, if set to false then the bigint values are ignored when serializing an object.
+ * @param maximumDepth the number of object nesting levels that will be serialized.
+ * @param deterministic a boolean flag.
+ */
 export interface IStringifyConfig {
   bigint: boolean;
   maximumDepth: number;
   maximumBreadth: number;
   deterministic: boolean;
 }
+/* eslint-enable max-len, no-trailing-spaces */
 
+/**
+ * @author wkmaaj
+ * @param obj
+ * @param msg a string message.
+ */
 export interface IComposeConfig extends IStringifyConfig {
   obj: unknown;
   msg: string;
