@@ -186,7 +186,7 @@ export const sum = ({ a, b, c }: ABC) => a + b + c;
  * @see {@link https://stackoverflow.com/a/12315145 Exact meaning of Function literal in JavaScript}
  * @see {@link https://stackoverflow.com/a/39821288 Exact meaning of Function literal in JavaScript}
  */
-export const sum2 = function sum(a: number, b: number, c: number) {
+export const sum2 = function sum(a: number, b: number, c: number): number {
   if (a < b) {
     return sum(a * 10, b, c);
   }

@@ -89,14 +89,14 @@ export const runForwardAndBackward = (original: string, updated: string) => {
   const forwardCheckResults = forwardCheck(original, updated);
   const backwardCheckResults = backwardCheck(original, updated);
 
-  Object.keys(forwardCheckResults).forEach((key, index) => {
+  Object.keys(forwardCheckResults).forEach((key: string, index: number) => {
     const backwardCheckResultsKey =
       Object.keys(forwardCheckResults).length - index - 1;
     checkResults = {
       ...checkResults,
       [key]: {
         forward: {
-          ...forwardCheckResults[key]
+          ...forwardCheckResults[index]
         },
         backward: {
           ...backwardCheckResults[backwardCheckResultsKey]
